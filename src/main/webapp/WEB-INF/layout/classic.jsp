@@ -12,6 +12,8 @@
 <html>
 <head>
 <%@taglib uri="http://www.springframework.org/tags" prefix="spring"%>
+<%@taglib uri="http://tiles.apache.org/tags-tiles-extras" prefix="tilesx" %>
+    <tilesx:useAttribute name="current" />
 
   <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.0/jquery.min.js"></script>
   <!-- Latest compiled and minified CSS -->
@@ -43,8 +45,8 @@
       </div>
       <div id="navbar" class="navbar-collapse collapse">
         <ul class="nav navbar-nav">
-          <li class="active"><a href='<spring:url value="/"/>'>Home</a></li>
-          <li><a href="#about">About</a></li>
+          <li class="${current == 'index' ? 'active' : ''}"><a href='<spring:url value="/"/>'>Home</a></li>
+          <li class="${current == 'users' ? 'active' : ''}"><a href="<spring:url value="/users.html" />">Users</a></li>
           <li><a href="#contact">Contact</a></li>
         </ul>
       </div><!--/.nav-collapse -->
