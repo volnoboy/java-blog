@@ -1,11 +1,9 @@
 <%--
   Created by IntelliJ IDEA.
-  User: Reuven
-  Date: 12/1/14
-  Time: 00:31
+  User: volnoboy
+  Date: 12/5/14
+  Time: 1:59 PM
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<%@ include file="../layout/taglib.jsp" %>
-<h1>Hello MVC!</h1>
-
+TODO ADD FORM
