@@ -46,8 +46,7 @@
     <!--</bean>-->
 
     <jpa:repositories base-package="com.volnoboy.jb.repository" />
-
-    <!--<import resource="security.xml" />-->
+    <import resource="security.xml" />
 
     <!--<task:annotation-driven />-->
 
