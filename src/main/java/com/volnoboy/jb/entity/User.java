@@ -7,7 +7,6 @@ import java.util.List;
  * Created by Reuven on 12/3/14.
  */
 @Entity
-
 public class User {
     public Integer getId() {
         return id;

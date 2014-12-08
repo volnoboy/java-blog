@@ -45,11 +45,12 @@ public class InitDbService {
 
 
         Role roleAdmin = new Role();
-        roleAdmin.setName("ROLE_Admin");
+        roleAdmin.setName("ROLE_ADMIN");
         roleRepository.save(roleAdmin);
 
         User userAdmin = new User();
         userAdmin.setName("admin");
+	    userAdmin.setPassword("admin");
         List<Role> roles = new ArrayList<Role>();
         roles.add(roleAdmin);
         roles.add(roleUser);

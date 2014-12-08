@@ -15,7 +15,7 @@
                                 expression="org.springframework.stereotype.Controller" />
     </context:component-scan>
 
-    <jdbc:embedded-database type="HSQL" id="dataSource"/>
+    <jdbc:embedded-database type="HSQL" id="dataSource" />
 
     <bean class="org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean" id="emf">
         <property name="packagesToScan" value="com.volnoboy.jb.entity" />
