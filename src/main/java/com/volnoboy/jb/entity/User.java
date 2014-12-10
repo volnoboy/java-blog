@@ -78,7 +78,7 @@ public class User {
     @JoinTable
     private List<Role> roles;
 
-    @OneToMany(mappedBy = "user")
+    @OneToMany(mappedBy = "user", cascade=CascadeType.REMOVE)
     private List<Blog> blogs;
 
 	private boolean enabled;

@@ -71,4 +71,8 @@ public class UserService {
 		User user = userRepository.findByName(userName);
 		return findOneWithBlogs(user.getId());
 	}
+
+	public void delete(int id) {
+		userRepository.delete(id);
+	}
 }

@@ -14,6 +14,9 @@
         <th>
             user name
         </th>
+        <th>
+            operations
+        </th>
     </tr>
     </thead>
     <tbody>
@@ -24,9 +27,11 @@
                 ${user.name}
             </a>
             </td>
-                </td>
-                </td>
-            </td>
+           <td>
+               <a href="<spring:url value="/users/remove/${user.id}.html" />" class="btn btn-danger" >
+                       remove
+               </a>
+           </td>
         </tr>
     </c:forEach>
 
