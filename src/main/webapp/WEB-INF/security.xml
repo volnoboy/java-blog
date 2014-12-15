@@ -8,6 +8,7 @@
            http://www.springframework.org/schema/security
            http://www.springframework.org/schema/security/spring-security.xsd http://www.springframework.org/schema/jdbc http://www.springframework.org/schema/jdbc/spring-jdbc.xsd">
 
+<global-method-security pre-post-annotations="enabled" />
 
     <http use-expressions="true">
     <intercept-url pattern="/users**" access="hasRole('ROLE_ADMIN')" />
