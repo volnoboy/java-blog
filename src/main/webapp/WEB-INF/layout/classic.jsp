@@ -29,6 +29,10 @@
 
   <!-- Latest compiled and minified JavaScript -->
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
+
+  <script type="text/javascript"
+          src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.11.1/jquery.validate.min.js"></script>
+
   <title><tiles:getAsString name="title"/></title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />﻿
 </head>
