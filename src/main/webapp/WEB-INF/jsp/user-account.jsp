@@ -113,8 +113,9 @@
           <tr>
             <td><c:out value="${item.publishedDate}" /></td>
             <td><strong>
-              <a href="<c:out value="${item.link}" />" target="_blank"/>
-              <c:out value="${item.title}" />
+              <a href="<c:out value="${item.link}" />" target="_blank">
+                <c:out value="${item.title}" />
+              </a>
             </strong>
             <br/>
               ${item.description}
