@@ -62,7 +62,7 @@ public class InitDbService {
 
         Blog blogJavaVids = new Blog();
         blogJavaVids.setName("JavaVids");
-        blogJavaVids.setUrl("http://volnoboy.com/indexrss.html?format=xml");
+        blogJavaVids.setUrl("file:///home/volnoboy/Desktop/tomcat.xml");
         blogJavaVids.setUser(userAdmin);
         blogRepository.save(blogJavaVids);
 
@@ -80,5 +80,4 @@ public class InitDbService {
 //        item2.setPublishedDate(new Date());
 //        itemRepository.save(item2);
     }
-
 }
