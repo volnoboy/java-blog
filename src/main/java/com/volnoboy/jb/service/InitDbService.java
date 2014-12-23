@@ -62,23 +62,23 @@ public class InitDbService {
 
         Blog blogJavaVids = new Blog();
         blogJavaVids.setName("JavaVids");
-        blogJavaVids.setUrl("http://volnoboy.com");
+        blogJavaVids.setUrl("http://volnoboy.com/indexrss.html?format=xml");
         blogJavaVids.setUser(userAdmin);
         blogRepository.save(blogJavaVids);
 
-        Item item1  = new Item();
-        item1.setBlog(blogJavaVids);
-        item1.setTitle("First");
-        item1.setLink("http://volnoboy.com");
-        item1.setPublishedDate(new Date());
-        itemRepository.save(item1);
-
-        Item item2  = new Item();
-        item2.setBlog(blogJavaVids);
-        item2.setTitle("Second");
-        item2.setLink("http://volnoboy.com");
-        item2.setPublishedDate(new Date());
-        itemRepository.save(item2);
+//        Item item1  = new Item();
+//        item1.setBlog(blogJavaVids);
+//        item1.setTitle("First");
+//        item1.setLink("http://volnoboy.com");
+//        item1.setPublishedDate(new Date());
+//        itemRepository.save(item1);
+//
+//        Item item2  = new Item();
+//        item2.setBlog(blogJavaVids);
+//        item2.setTitle("Second");
+//        item2.setLink("http://volnoboy.com");
+//        item2.setPublishedDate(new Date());
+//        itemRepository.save(item2);
     }
 
 }
