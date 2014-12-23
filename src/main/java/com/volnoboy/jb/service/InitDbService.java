@@ -39,32 +39,32 @@ public class InitDbService {
 
     @PostConstruct
     public void init() {
+        if(roleRepository.findByName("ROLE_ADMIN") == null) {
+            Role roleUser = new Role();
+            roleUser.setName("ROLE_USER");
+            roleRepository.save(roleUser);
 
-        Role roleUser = new Role();
-        roleUser.setName("ROLE_USER");
-        roleRepository.save(roleUser);
 
+            Role roleAdmin = new Role();
+            roleAdmin.setName("ROLE_ADMIN");
+            roleRepository.save(roleAdmin);
 
-        Role roleAdmin = new Role();
-        roleAdmin.setName("ROLE_ADMIN");
-        roleRepository.save(roleAdmin);
+            User userAdmin = new User();
+            userAdmin.setEnabled(true);
+            userAdmin.setName("admin");
+            BCryptPasswordEncoder encoder = new BCryptPasswordEncoder();
+            userAdmin.setPassword(encoder.encode("admin"));
+            List<Role> roles = new ArrayList<Role>();
+            roles.add(roleAdmin);
+            roles.add(roleUser);
+            userAdmin.setRoles(roles);
+            userRepository.save(userAdmin);
 
-        User userAdmin = new User();
-	    userAdmin.setEnabled(true);
-        userAdmin.setName("admin");
-	    BCryptPasswordEncoder encoder = new BCryptPasswordEncoder();
-	    userAdmin.setPassword(encoder.encode("admin"));
-        List<Role> roles = new ArrayList<Role>();
-        roles.add(roleAdmin);
-        roles.add(roleUser);
-        userAdmin.setRoles(roles);
-        userRepository.save(userAdmin);
-
-        Blog blogJavaVids = new Blog();
-        blogJavaVids.setName("JavaVids");
-        blogJavaVids.setUrl("file:///home/volnoboy/Desktop/tomcat.xml");
-        blogJavaVids.setUser(userAdmin);
-        blogRepository.save(blogJavaVids);
+            Blog blogJavaVids = new Blog();
+            blogJavaVids.setName("JavaVids");
+            blogJavaVids.setUrl("file:///home/volnoboy/Desktop/tomcat.xml");
+            blogJavaVids.setUser(userAdmin);
+            blogRepository.save(blogJavaVids);
 
 //        Item item1  = new Item();
 //        item1.setBlog(blogJavaVids);
@@ -79,5 +79,6 @@ public class InitDbService {
 //        item2.setLink("http://volnoboy.com");
 //        item2.setPublishedDate(new Date());
 //        itemRepository.save(item2);
+        }
     }
 }
