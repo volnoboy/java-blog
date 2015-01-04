@@ -1,11 +1,9 @@
 package com.volnoboy.jb.service;
 
 import com.volnoboy.jb.entity.Blog;
-import com.volnoboy.jb.entity.Item;
 import com.volnoboy.jb.entity.Role;
 import com.volnoboy.jb.entity.User;
 import com.volnoboy.jb.repository.BlogRepository;
-import com.volnoboy.jb.repository.ItemRepository;
 import com.volnoboy.jb.repository.RoleRepository;
 import com.volnoboy.jb.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,7 +13,6 @@ import org.springframework.stereotype.Service;
 import javax.annotation.PostConstruct;
 import javax.transaction.Transactional;
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
 
 /**
@@ -34,11 +31,8 @@ public class InitDbService {
     @Autowired
     private BlogRepository blogRepository;
 
-    @Autowired
-    private ItemRepository itemRepository;
-
     @PostConstruct
-    public void init() {
+        public void init() {
         if(roleRepository.findByName("ROLE_ADMIN") == null) {
             Role roleUser = new Role();
             roleUser.setName("ROLE_USER");
@@ -61,24 +55,12 @@ public class InitDbService {
             userRepository.save(userAdmin);
 
             Blog blogJavaVids = new Blog();
-            blogJavaVids.setName("JavaVids");
-            blogJavaVids.setUrl("file:///home/volnoboy/Desktop/tomcat.xml");
+            blogJavaVids.setName("TechCrunch");
+            blogJavaVids.setUrl("http://feeds.feedburner.com/TechCrunch/");
+//          blogJavaVids.setUrl("file:///home/volnoboy/Desktop/tomcat.xml");
             blogJavaVids.setUser(userAdmin);
             blogRepository.save(blogJavaVids);
 
-//        Item item1  = new Item();
-//        item1.setBlog(blogJavaVids);
-//        item1.setTitle("First");
-//        item1.setLink("http://volnoboy.com");
-//        item1.setPublishedDate(new Date());
-//        itemRepository.save(item1);
-//
-//        Item item2  = new Item();
-//        item2.setBlog(blogJavaVids);
-//        item2.setTitle("Second");
-//        item2.setLink("http://volnoboy.com");
-//        item2.setPublishedDate(new Date());
-//        itemRepository.save(item2);
         }
     }
 }
